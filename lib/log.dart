@@ -67,4 +67,9 @@ class Log {
     }
     return '$text\n';
   }
+
+  /// Removes all messages from the buffer.
+  void clearBuffer() {
+    buffer.value = [];
+  }
 }

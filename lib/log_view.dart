@@ -67,6 +67,15 @@ class _LogViewState extends State<LogView> {
                 children: [
                   MaterialButton(
                     onPressed: () {
+                      log.clearBuffer();
+                    },
+                    child: Icon(
+                      Icons.delete,
+                      color: Colors.white,
+                    ),
+                  ),
+                  MaterialButton(
+                    onPressed: () {
                       Clipboard.setData(
                         ClipboardData(text: log.bufferToText()),
                       );
