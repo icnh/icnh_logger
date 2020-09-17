@@ -4,6 +4,14 @@ A logging tool for Flutter projects.
 
 ## Usage
 
+Add as a dependency in `pubspec.yaml`.
+```yaml
+  icnh_logger:
+    git:
+      url: https://github.com/icnh/icnh_logger.git
+      path: .
+```
+
 To log a message:
 ```dart
 import 'package:icnh_logger/icnh_logger.dart';
