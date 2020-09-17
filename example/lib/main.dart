@@ -30,6 +30,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('ICNH Logger Example'),
+      ),
       body: Stack(
         children: [
           Center(
@@ -77,10 +80,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           if (_showLog)
-            SafeArea(
-              child: LogView(
-                onClose: () => setState(() => _showLog = false),
-              ),
+            LogView(
+              onClose: () => setState(() => _showLog = false),
             ),
         ],
       ),
