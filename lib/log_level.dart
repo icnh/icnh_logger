@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 enum LogLevel { debug, warning, error }
 
 extension LogLevelFunctions on LogLevel {
+  /// Get a single letter representing the [LogLevel].
   String get tag {
     switch (this) {
       case LogLevel.debug:
@@ -15,6 +16,7 @@ extension LogLevelFunctions on LogLevel {
     throw UnimplementedError('Missing case "$this"');
   }
 
+  /// Get the name representing the [LogLevel].
   String get name {
     switch (this) {
       case LogLevel.debug:
@@ -27,6 +29,11 @@ extension LogLevelFunctions on LogLevel {
     throw UnimplementedError('Missing case "$this"');
   }
 
+  /// Get the color representing the [LogLevel].
+  ///
+  /// Debug: blue.
+  /// Warning: yellow.
+  /// Error: red.
   Color get color {
     switch (this) {
       case LogLevel.debug:

@@ -5,6 +5,10 @@ import 'icnh_logger.dart';
 import 'log_entry.dart';
 import 'log_level.dart';
 
+/// A view showing the content of the Log buffer.
+///
+/// [onClose] will be called when the close button of this
+/// view is pressed.
 class LogView extends StatefulWidget {
   const LogView({Key key, this.onClose}) : super(key: key);
 

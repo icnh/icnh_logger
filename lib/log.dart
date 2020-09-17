@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'log_entry.dart';
 import 'log_level.dart';
 
+/// Manages all logging functionality.
+/// Basicliy wraps the print statement.
 class Log {
   Log() {
     FlutterError.onError = (details) {
@@ -11,10 +13,16 @@ class Log {
     };
   }
 
+  /// Collects all messages send to the buffer.
   final buffer = ValueNotifier(<LogEntry>[]);
 
+  /// Print a debug message.
   void debug(Object object) => _log(LogLevel.debug, object);
+
+  /// Print a warning message.
   void warn(Object object) => _log(LogLevel.warning, object);
+
+  /// Print an error. This will also print the stack trace to the console.
   void error(Object object) => _log(
         LogLevel.error,
         object,
@@ -42,12 +50,14 @@ class Log {
     }
   }
 
+  /// Get the complete buffer as a string.
   String bufferToText() {
     return buffer.value.reversed.fold('', (value, element) {
       return '$value${logEntryToText(element)}';
     });
   }
 
+  /// Get a specific log entry as a string.
   String logEntryToText(LogEntry logEntry) {
     final time = logEntry.timestamp.toString();
     final level = logEntry.level.tag;

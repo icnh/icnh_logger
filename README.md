@@ -46,3 +46,4 @@ Widget build(BuildContext context) {
 ## Example
 
 ![Animation showing in App Example](example.gif)
+![Animation showing in App Copy Example](example_copy.gif)
