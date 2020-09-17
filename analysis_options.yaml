@@ -1,0 +1,10 @@
+include: package:extra_pedantic/analysis_options.yaml
+
+linter:
+  rules:
+    - avoid_print
+
+analyzer:
+    strong-mode:
+      implicit-casts: false
+      implicit-dynamic: false
